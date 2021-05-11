@@ -5,7 +5,7 @@ import Hamburger from '../../Others/Hamburger'
 import Logo from '../../Others/Logo';
 import Button from '../../Others/Button';
 import './Navbar.scss';
-import CompanyName from '../../Others/CompanyName';
+// import CompanyName from '../../Others/CompanyName';
 
 function Navbar({ redux: { user } }) {
   const [navbarOpen, setNavbarOpen] = React.useState(true),
