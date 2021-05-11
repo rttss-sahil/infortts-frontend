@@ -1,0 +1,19 @@
+.button {
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  opacity: 0.85;
+  font-size: 1.2rem;
+  border: 1px solid transparent;
+  box-shadow: 1px 2px 5px gray, -1px 2px 5px gray;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+    box-shadow: 1px 1px 2px white, -1px 1px 2px white;
+  }
+
+  &:focus {
+    border: 1px solid white;
+    opacity: 1;
+  }
+}
