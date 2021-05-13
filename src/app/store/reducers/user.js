@@ -1,8 +1,11 @@
 import actionTypes from "../actions/actionTypes";
 
 const initialState = {
-  loggedIn: false,
-  user: null
+  loggedIn: true,
+  user: {
+    email: "sah@rat.com",
+    password: "12345678"
+  }
 }
 
 

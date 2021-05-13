@@ -5,32 +5,40 @@
   flex-direction: column;
   height: 1rem;
   cursor: pointer;
-  .navbar__hamburger_line{
+
+  .navbar__hamburger_line {
     height: 2px;
     width: 1.5rem;
     background-color: white;
     border-radius: 999px;
-    &.line1 {
-      transform: translateY(0.3rem) rotateZ(45deg);
-    }
-    &.line2 {
-      height: 1px;
-      opacity: 0;
-    }
+
+    &.line1,
     &.line3 {
-      transform:translateY(-0.6rem) rotateZ(-45deg);
+      transform: rotate(0) translateY(0);
+    }
+
+    &.line2 {
+      opacity: 1;
     }
   }
+
   &.scrolled .navbar__hamburger_line {
     background-color: black;
   }
+
   &.open {
-    .navbar__hamburger_line{
-      &.line1, &.line3 {
-        transform: rotate(0) translateY(0);
+    .navbar__hamburger_line {
+      &.line1 {
+        transform: translateY(0.3rem) rotateZ(45deg);
       }
+
       &.line2 {
-        opacity: 1;
+        height: 1px;
+        opacity: 0;
+      }
+
+      &.line3 {
+        transform: translateY(-0.6rem) rotateZ(-45deg);
       }
     }
   }
