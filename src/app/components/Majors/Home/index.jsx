@@ -1,41 +1,47 @@
 import React from 'react';
-import Navbar from '../../Minors/Navbar';
-import CompanyName from '../../Others/CompanyName';
 import './Home.scss';
-
+const Navbar = React.lazy(() => import('../../Minors/Navbar'));
+const CompanyName = React.lazy(() => import('../../Others/CompanyName'));
 const Home = () => {
+  const [scrolled, setScrolled] = React.useState(false);
+  React.useEffect(() => {
+    document.addEventListener('scroll', () => {
+      window.scrollY > 20 ? setScrolled(true) : setScrolled(false)
+    }, { passive: true })
+  })
   return (
     <React.Fragment>
-      <div className="header__logo"></div>
-      <CompanyName />
-      <Navbar />
+      <header>
+        <CompanyName scrolled={scrolled} />
+        <Navbar scrolled={scrolled} />
+      </header>
       <div className="home__container">
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
-        <h1>dkshbsjdkhfhjdsfj</h1>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
+        <h2>dkshbsjdkhfhjdsfj</h2>
         <h1>dkshbsjdkhfhjdsfj</h1>
         <h1>dkshbsjdkhfhjdsfj</h1>
         <h1>dkshbsjdkhfhjdsfj</h1>
@@ -61,5 +67,4 @@ const Home = () => {
     </React.Fragment>
   )
 }
-
 export default Home;

@@ -4,23 +4,20 @@
   height: 0.5rem;
   background-color: #2acdff;
 }
-
 .navbar {
   width: 100vw;
   height: 100vh;
   position: fixed;
   overflow: hidden;
-  
   .navbar__close {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 7rem;
+    height: 6.5rem;
     padding: 0 2rem;
     background-color: $global-navbar;
     border-bottom: 1px solid $global_primary;
     box-shadow: 1px 1px 20px #111;
-
     :nth-child(2) {
       color: white;
       font-size: 2rem;
@@ -28,7 +25,6 @@
       :nth-child(2) {font-family: brandon-thin;}
     }
   }
-
   .navbar__open {
     background-color: $global_primary;
     padding: 2rem 0 3rem 0;
@@ -56,10 +52,8 @@
           color: white;
         }
       }
-
     }
   }
-    
     &.open .navbar__open{
       visibility: 0;
       transform: translateX(100%);
