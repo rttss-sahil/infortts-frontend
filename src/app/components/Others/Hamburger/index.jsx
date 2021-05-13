@@ -1,13 +1,13 @@
 import React from 'react';
 import './Hamburger.scss';
-function Hamburger({ handleHamburgerClick }) {
+function Hamburger({ handleHamburgerClick, scrolled }) {
   return (
-    <div className="navbar__close__hamburger" onClick={handleHamburgerClick}>
+    <div className={`navbar__close__hamburger ${scrolled ? "scrolled" : ""}`} onClick={handleHamburgerClick}>
       <div className="navbar__close__hamburger_line line1"></div>
-      <div className="navbar__close__hamburger_line line2"></div>
+      <div className="navbar__close__hamburger_line line2" ></div>
       <div className="navbar__close__hamburger_line line3"></div>
-    </div>
+    </div >
   )
 }
 
-export default Hamburger
+export default Hamburger;

@@ -4,6 +4,7 @@ body, * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 body {
@@ -15,4 +16,9 @@ body {
 a{
   text-decoration: none;
   color: $global_text_color;
+}
+
+#root>:nth-child(2) {
+  margin-top: 10rem;
+  padding: 0 1.5rem;
 }

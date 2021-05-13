@@ -5,7 +5,9 @@
   flex-direction: column;
   height: 1rem;
   cursor: pointer;
-
+  &.scrolled {
+    background-color: black;
+  }
   .navbar__close__hamburger_line{
     height: 2px;
     width: 1.5rem;
@@ -13,7 +15,6 @@
     border-radius: 999px;
     &.line1 {
       transform: translateY(0.3rem) rotateZ(45deg);
-      transition: all 0.3s ease;
     }
     &.line2 {
       height: 1px;
@@ -21,7 +22,6 @@
     }
     &.line3 {
       transform:translateY(-0.6rem) rotateZ(-45deg);;
-      transition: all 0.3s ease;
     }
   }
 }

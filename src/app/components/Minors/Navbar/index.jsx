@@ -2,20 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
-const Hamburger = React.lazy(() => import('../../Others/Hamburger'));
-const Logo = React.lazy(() => import('../../Others/Logo'));
 const Button = React.lazy(() => import('../../Others/Button'));
-function Navbar({ redux: { user } }) {
-  const [navbarOpen, setNavbarOpen] = React.useState(true),
-    handleHamburgerClick = () => { setNavbarOpen(!navbarOpen) };
+function Navbar({ redux: { user }, scrolled, navbarOpen }) {
   return (
     <React.Fragment>
-      <div className="header__line"></div>
       <div className={`navbar ${navbarOpen ? "open" : ""}`}>
-        <div className="navbar__close">
-          <Logo />
-          <Hamburger handleHamburgerClick={handleHamburgerClick} />
-        </div>
         <div className="navbar__open">
           <div className="navbar__group first">
             <div className="navbar__group___first__item">
