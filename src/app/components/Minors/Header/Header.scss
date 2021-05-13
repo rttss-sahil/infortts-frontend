@@ -7,30 +7,37 @@ header {
   position: fixed;
   background-color: black;
   box-shadow: 5px 5px 10px rgba(#000000, 0.5);
-  .header__line{
+
+  .header__line {
     height: 0.5rem;
     width: 100%;
     background-color: #2acdff;
   }
+
   main {
     padding: 0 1.5rem;
+    padding-top: 0.5rem;
     display: flex;
     width: 100%;
     height: 4.5rem;
     justify-content: space-between;
     align-items: center;
   }
+
   &.scrolled {
-    main{
+    main {
       box-shadow: 2px 2px 5px rgba(#fff, 0.2);
     }
-    .header__line{
+
+    .header__line {
       background-color: white;
     }
+
     background-color: white;
-    *{
+
+    * {
       color: black;
     }
-    
+
   }
 }

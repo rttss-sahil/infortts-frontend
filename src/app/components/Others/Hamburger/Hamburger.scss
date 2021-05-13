@@ -1,14 +1,11 @@
-.navbar__close__hamburger {
+.navbar__hamburger {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
   height: 1rem;
   cursor: pointer;
-  &.scrolled {
-    background-color: black;
-  }
-  .navbar__close__hamburger_line{
+  .navbar__hamburger_line{
     height: 2px;
     width: 1.5rem;
     background-color: white;
@@ -21,19 +18,20 @@
       opacity: 0;
     }
     &.line3 {
-      transform:translateY(-0.6rem) rotateZ(-45deg);;
+      transform:translateY(-0.6rem) rotateZ(-45deg);
     }
   }
-}
-
-.navbar.open {
-  .navbar__close__hamburger_line{
-    &.line1, &.line3 {
-      transform: rotate(0) translateY(0);
-    }
-    &.line2 {
-      height: 1px;
-      opacity: 1;
+  &.scrolled .navbar__hamburger_line {
+    background-color: black;
+  }
+  &.open {
+    .navbar__hamburger_line{
+      &.line1, &.line3 {
+        transform: rotate(0) translateY(0);
+      }
+      &.line2 {
+        opacity: 1;
+      }
     }
   }
 }

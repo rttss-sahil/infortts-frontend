@@ -6,18 +6,20 @@ const Logo = React.lazy(() => import('../../Others/Logo'));
 const Navbar = React.lazy(() => import('../../Minors/Navbar'));
 function Header({ scrolled }) {
   const [navbarOpen, setNavbarOpen] = React.useState(true),
-    handleHamburgerClick = () => { setNavbarOpen(!navbarOpen) };
+    handleHamburgerClick = () => { setNavbarOpen(!navbarOpen) },
+    closeNavbar = () => {
+      setNavbarOpen(!navbarOpen);
+    }
   return (
     <header className={scrolled ? "scrolled" : ""}>
       <div className="header__line"></div>
       <main>
         <Logo />
         <CompanyName scrolled={scrolled} />
-        <Hamburger handleHamburgerClick={handleHamburgerClick} scrolled={scrolled} />
+        <Hamburger handleHamburgerClick={handleHamburgerClick} scrolled={scrolled} navbarOpen={navbarOpen} />
       </main>
-      <Navbar scrolled={scrolled} navbarOpen={navbarOpen} />
+      <Navbar scrolled={scrolled} navbarOpen={navbarOpen} closeNavbar={closeNavbar} />
     </header>
   )
 }
-
-export default Header
+export default Header;

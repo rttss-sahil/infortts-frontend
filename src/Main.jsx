@@ -19,6 +19,7 @@ function Main() {
     <Suspense fallback={Loader}>
       <BrowserRouter>
         <Header scrolled={scrolled} />
+        {/* <Loader /> */}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/:page" component={Error404} />

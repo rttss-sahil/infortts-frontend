@@ -1,5 +1,12 @@
 .company__name {
+  user-select: none;
   color: white;
-  :nth-child(1) {font-family: brandon-bold;}
-  :nth-child(2) {font-family: brandon-thin;}
+
+  :nth-child(1) {
+    font-family: brandon-bold;
+  }
+
+  :nth-child(2) {
+    font-family: brandon-thin;
+  }
 }
