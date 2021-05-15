@@ -6,8 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import store from './app/store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // eslint-disable-next-line
-import * as serviceWorker from './service-worker';
-// eslint-disable-next-line
 // import registerServiceWorker from 'react-service-worker';
 ReactDOM.render(
   <Provider store={store}>
@@ -16,7 +14,7 @@ ReactDOM.render(
   ,
   document.getElementById('root')
 );
-serviceWorker.register()
+// serviceWorker.register()
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
