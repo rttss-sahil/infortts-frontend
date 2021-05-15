@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Main from './App';
+import Main from './Main';
 import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
 import store from './app/store';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+// eslint-disable-next-line
+import registerServiceWorker from 'react-service-worker';
 ReactDOM.render(
   <Provider store={store}>
     <Main />

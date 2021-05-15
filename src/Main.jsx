@@ -21,7 +21,6 @@ function Main() {
     <BrowserRouter>
       <Switch>
         <Suspense fallback={<Loader />}>
-          {/* <Loader /> */}
           <Header scrolled={scrolled} handleScroll={handleScroll} />
           <Routes />
         </Suspense>
