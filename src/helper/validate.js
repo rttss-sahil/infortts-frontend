@@ -11,14 +11,13 @@ function validatePassword(password) {
 }
 
 function scorePassword(password) {
-  const r1 = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-  const r2 = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-  const r3 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-  let score = 0;
-  score += r1.test(password) ? 1 : 0;
-  score += r2.test(password) ? 1 : 0;
-  score += r3.test(password) ? 1 : 0;
-  return score;
+  const r1 = /^(?=.*[A-Za-z])[A-Za-z\d]{8,}$/;
+  const r2 = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d$@$!%*#?&]{8,}$/;
+  const r3 = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+  r1.test(password) && console.log("1");
+  r2.test(password) && console.log("2");
+  r3.test(password) && console.log("3");
+  return r3.test(password) ? 3 : (r2.test(password) ? 2 : (r1.test(password) ? 1 : 0));
 }
 
 const validate = {

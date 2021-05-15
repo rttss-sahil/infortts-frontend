@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import validate from '../../../../helper/validate'
-// import ProgressBar from 'react-boot'
+import ProgressBar from 'react-bootstrap/ProgressBar'
 import './Login.scss'
 const InputField = React.lazy(() => import('../../Others/InputField'))
 function Login() {
@@ -26,7 +26,8 @@ function Login() {
       const password = e.target.value;
       SetPassword(password);
       const score = validate.scorePassword(password);
-      setScore(score);
+      console.log("sjh");
+      setScore(score)
     }
   return (
     <div className="container">
@@ -37,11 +38,15 @@ function Login() {
       </div>
       <form onSubmit={(e) => handleSubmit(e)}>
         <InputField autofocus={true} type="email" value={email} placeholder={"Email"} required onChange={e => handleEmailInputChange(e)} />
-        <InputField type="password" value={password} placeholder={"Password"} onChange={e => handlePasswordInputChange(e)} />
-        <progress className="password__score" min={0} max={3} value={score} />
-        <InputField type="submit" value="Submit" />
+        <InputField type="text" value={password} placeholder={"Password"} onChange={e => handlePasswordInputChange(e)} />
       </form>
-    </div>
+      <ProgressBar>
+        <ProgressBar variant="danger" animated now={score >= 1 ? 33 : 0} key={3} />
+        <ProgressBar variant="warning" animated now={score >= 2 ? 34 : 0} key={2} />
+        <ProgressBar variant="success" animated now={score >= 3 ? 33 : 0} key={1} />
+      </ProgressBar>
+      <InputField type="submit" value="Submit" />
+    </div >
   )
 }
 export default Login;
