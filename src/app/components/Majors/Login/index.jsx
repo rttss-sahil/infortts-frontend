@@ -1,6 +1,7 @@
 import React from 'react'
-import InputField from '../../Others/InputField';
+import { NavLink } from 'react-router-dom'
 import './Login.scss'
+const InputField = React.lazy(() => import('../../Others/InputField'))
 function Login() {
   const [email, setEmail] = React.useState(''),
     [password, SetPassword] = React.useState(''),
@@ -23,8 +24,12 @@ function Login() {
       SetPassword(password)
     }
   return (
-    <div>
-      Login page
+    <div className="container">
+      <div className="signup">Log In</div>
+      <div className="signup">
+        <span>Don't have an account?</span>
+        <NavLink to="/login">Sign Up</NavLink>
+      </div>
       <form onSubmit={(e) => handleSubmit(e)}>
         <InputField autofocus={true} type="email" value={email} placeholder={"Email"} required onChange={e => handleEmailInputChange(e)} />
         <InputField type="password" value={password} placeholder={"Password"} onChange={e => handlePasswordInputChange(e)} />

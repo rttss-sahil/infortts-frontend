@@ -1,5 +1,5 @@
 import React from "react";
-import "./Loading3.scss";
+import "./Loader.scss";
 
 function Loader() {
   return (
