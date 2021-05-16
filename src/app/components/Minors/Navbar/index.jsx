@@ -35,7 +35,7 @@ function Navbar({ redux: { user }, navbarOpen, closeNavbar }) {
       </div>
       <div className="navbar__group last">
         {user.loggedIn && (
-          <Button text={"Sign In / Sign Up"} link="/login" closeNavbar={closeNavbar} />
+          <Button text={"Sign In / Sign Up"} link="/signup" closeNavbar={closeNavbar} />
         )}
       </div>
     </div >

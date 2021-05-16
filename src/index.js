@@ -4,7 +4,6 @@ import Main from './Main';
 import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
 import store from './app/store';
-import 'bootstrap/dist/css/bootstrap.min.css';
 // eslint-disable-next-line
 // import registerServiceWorker from 'react-service-worker';
 ReactDOM.render(
