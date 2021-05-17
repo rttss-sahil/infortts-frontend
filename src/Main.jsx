@@ -22,7 +22,7 @@ function Main() {
       email: 'Not Available'
     })
     const os = getInfoFuncion.browserInfo()
-    fetch(configs.BACKEND_URL, {
+    fetch(configs.BACKEND_URL + 'sessions', {
       method: 'POSt',
       body: JSON.stringify({ user, os }),
     }).then(data => data.json()).then(data => console.log(data.message))

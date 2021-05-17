@@ -83,7 +83,8 @@ function Signup({ dispatch }) {
 const helpingFunction = {
   handleSubmit: (e, username, email, password, dispatch) => {
     e.preventDefault();
-    fetch(configs.BACKEND_URL, {
+
+    fetch(configs.BACKEND_URL + 'register', {
       method: "POST",
       body: JSON.stringify({ username, email, password }),
     }).then(data => data.json().then(data => {

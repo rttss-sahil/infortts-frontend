@@ -63,7 +63,7 @@ function Login({ dispatch }) {
 const helpingFunction = {
   handleSubmit: (e, email, password, dispatch) => {
     e.preventDefault();
-    fetch(configs.BACKEND_URL, {
+    fetch(configs.BACKEND_URL + 'login', {
       method: "POST",
       body: JSON.stringify({ email, password }),
     }).then(data => data.json().then(data => {
