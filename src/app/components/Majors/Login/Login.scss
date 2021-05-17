@@ -29,6 +29,7 @@
   }
 
   form {
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -101,5 +102,9 @@
         }
       }
     }
+  }
+
+  :nth-child(4) {
+    font-size: 0.8rem;
   }
 }

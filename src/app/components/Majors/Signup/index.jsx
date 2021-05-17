@@ -3,7 +3,9 @@ import { NavLink } from 'react-router-dom'
 import validate from '../../../../helper/validate'
 import './Signup.scss'
 import { FiMail, FiLock, FiUser } from 'react-icons/fi';
-function Signup() {
+import { connect } from 'react-redux';
+import actions from '../../../store/actions/actions'
+function Signup({ dispatch }) {
   const [email, setEmail] = React.useState(''),
     [username, setUsername] = React.useState(''),
     [password, setPassword] = React.useState(''),
@@ -11,37 +13,7 @@ function Signup() {
     [usernameError, setUsernameError] = React.useState(false),
     [passwordError, setPasswordError] = React.useState(false),
     [score, setScore] = React.useState(0),
-    handleSubmit = (e) => {
-      e.preventDefault();
-      var myHeaders = new Headers().append('Content-Type', 'application/json');
-      fetch('http://localhost:5000/register', {
-        method: "POST",
-        body: JSON.stringify({ username, email, password }),
-        headers: myHeaders,
-      }).then(data => data.json().then(data => console.log(data)))
-    },
-    handleUsernameInputChange = (e) => {
-      const localUsername = e.target.value;
-      setUsername(localUsername)
-      setUsernameError(!validate.validateUsername(localUsername) || localUsername === '');
-    },
-    handleEmailInputChange = (e) => {
-      const localEmail = e.target.value;
-      setEmail(localEmail);
-      setEmailError(!validate.validateEmail(localEmail) || localEmail === '')
-    },
-    handlePasswordInputChange = (e) => {
-      const localPassword = e.target.value;
-      setPassword(localPassword);
-      if (localPassword === '') {
-        setScore(0)
-        setPasswordError(true)
-      } else {
-        const score = validate.scorePassword(localPassword);
-        setScore(score)
-        setPasswordError(score < 1)
-      }
-    }
+    { handleSubmit, handleEmailInputChange, handleUsernameInputChange, handlePasswordInputChange } = helpingFunction;
   return (
     <div className="container register">
       <div className="register__top">
@@ -52,27 +24,95 @@ function Signup() {
         </div>
       </div>
       <div className="hor__line"></div>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form onSubmit={(e) => handleSubmit(e, username, email, password, dispatch)}>
         <div className={`input__group ${usernameError ? 'error' : ''}`}>
           <FiUser />
-          <input autoFocus={true} type="text" value={username} placeholder="John Doe" required onChange={e => handleUsernameInputChange(e)} onBlur={e => handleUsernameInputChange(e)} />
+          <input
+            autoFocus={true}
+            type="text"
+            value={username}
+            placeholder="John Doe"
+            required
+            onChange={e => handleUsernameInputChange(e, setUsername, setUsernameError)}
+          // onBlur={e => handleUsernameInputChange(e, setUsername, setUsernameError)}
+          />
         </div>
         <div className={`input__group ${emailError ? 'error' : ''}`}>
           <FiMail />
-          <input autoFocus={true} type="email" value={email} placeholder="info@infortts.com" required onChange={e => handleEmailInputChange(e)} onBlur={e => handleEmailInputChange(e)} />
+          <input
+            // autoFocus={true}
+            type="email"
+            // autoComplete
+            value={email}
+            placeholder="info@infortts.com"
+            required
+            onChange={e => handleEmailInputChange(e, setEmail, setEmailError)}
+          // onBlur={e => handleEmailInputChange(e, setEmail, setEmailError)}
+          />
         </div>
         <div className={`input__group ${score === 3 ? 'weak' : (score === 2 ? 'medium' : (score === 1 ? 'weak' : (passwordError ? 'error' : '')))}`}>
           <FiLock />
-          <input autoFocus={true} type="text" value={password} placeholder="P@sswor#" required onChange={e => handlePasswordInputChange(e)} onBlur={e => handlePasswordInputChange(e)} />
+          <input
+            // autoFocus={true}
+            type="text"
+            value={password}
+            placeholder="P@sswor#"
+            required
+            onChange={e => handlePasswordInputChange(e, setPassword, setPasswordError, setScore)}
+          // onBlur={e => handlePasswordInputChange(e, setPassword, setPasswordError, setScore)}
+          />
         </div>
         <div className="input__group">
-          <input disabled={!(!usernameError && !emailError && !passwordError)} type="submit" value="Submit" />
+          <input
+            onClick={(e) => handleSubmit(e, username, email, password, dispatch)}
+            // disabled={usernameError || emailError || passwordError || score === 0}
+            type="submit"
+            value="Submit" />
         </div>
       </form>
-      <div>You agree to the Privacy Policy</div>
+      <div>By signing up, you agree to the {' '}
+        <NavLink to="/terms-of-use">Terms of Use</NavLink>
+        {' & '}
+        <NavLink to="privacy-policy">Privacy Policy</NavLink>{' .'}
+      </div>
       <div className="hor__line"></div>
-
     </div >
   )
 }
-export default Signup;
+const helpingFunction = {
+  handleSubmit: (e, username, email, password, dispatch) => {
+    e.preventDefault();
+    fetch('http://localhost:5000/users/register', {
+      method: "POST",
+      body: JSON.stringify({ username, email, password }),
+    }).then(data => data.json().then(data => {
+      if (data.user) {
+        // console.log(data.user)
+        dispatch(actions.logUserIn(data.user))
+      }
+    }))
+  },
+  handleUsernameInputChange: (e, setUsername, setUsernameError) => {
+    const localUsername = e.target.value;
+    setUsername(localUsername)
+    setUsernameError(!validate.validateUsername(localUsername) || localUsername === '');
+  },
+  handleEmailInputChange: (e, setEmail, setEmailError) => {
+    const localEmail = e.target.value;
+    setEmail(localEmail);
+    setEmailError(!validate.validateEmail(localEmail) || localEmail === '')
+  },
+  handlePasswordInputChange: (e, setPassword, setPasswordError, setScore) => {
+    const localPassword = e.target.value;
+    setPassword(localPassword);
+    if (localPassword === '') {
+      setScore(0)
+      setPasswordError(true)
+    } else {
+      const score = validate.scorePassword(localPassword);
+      setScore(score)
+      setPasswordError(score < 1)
+    }
+  }
+}
+export default connect(state => ({ redux: state }), dispatch => ({ dispatch }))(Signup);

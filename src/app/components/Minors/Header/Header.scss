@@ -41,3 +41,20 @@ header {
 
   }
 }
+
+
+@media screen and (min-width: 728px) {
+  header {
+    height: 7rem;
+
+    .header__line {
+      height: 0.8rem;
+    }
+
+    main {
+      padding: 0 2rem;
+      height: 6rem;
+    }
+
+  }
+}

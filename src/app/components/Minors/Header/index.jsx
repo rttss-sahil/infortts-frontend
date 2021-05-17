@@ -18,7 +18,7 @@ function Header({ scrolled, handleScroll }) {
     <header className={scrolled ? "scrolled" : ""}>
       <div className="header__line"></div>
       <main>
-        <Logo />
+        <Logo closeNavbar={closeNavbar} />
         <CompanyName scrolled={scrolled} />
         <Hamburger handleHamburgerClick={handleHamburgerClick} scrolled={scrolled} navbarOpen={navbarOpen} />
       </main>
