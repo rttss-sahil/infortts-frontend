@@ -5,6 +5,7 @@ import './Login.scss'
 import { FiMail, FiLock } from 'react-icons/fi';
 import { connect } from 'react-redux';
 import actions from '../../../store/actions/actions';
+import configs from '../../../../configs';
 function Login({ dispatch }) {
   const [email, setEmail] = React.useState(''),
     [password, setPassword] = React.useState(''),
@@ -62,7 +63,7 @@ function Login({ dispatch }) {
 const helpingFunction = {
   handleSubmit: (e, email, password, dispatch) => {
     e.preventDefault();
-    fetch('http://localhost:5000/users/login', {
+    fetch(configs.BACKEND_URL, {
       method: "POST",
       body: JSON.stringify({ email, password }),
     }).then(data => data.json().then(data => {
