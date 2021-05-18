@@ -1,9 +1,10 @@
 import { combineReducers, createStore } from "redux";
-import Users from "./reducers/user";
+import Modals from "./reducers/modals";
+import Users from "./reducers/users";
 
 
 
-const store = createStore(combineReducers({ user: Users }))
+const store = createStore(combineReducers({ user: Users, modal: Modals }))
 
 
 export default store;

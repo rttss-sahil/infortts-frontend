@@ -1,7 +1,7 @@
 import actionTypes from "../actions/actionTypes";
 
 const initialState =
-  window.localStorage.getItem('username') ? ({
+  window.localStorage.getItem('loggedIn') === 'true' ? ({
     loggedIn: true,
     user: {
       username: window.localStorage.getItem('username'),
@@ -14,37 +14,47 @@ const initialState =
 
 
 const Users = (state = initialState, action) => {
-  // console.log('state: ', state)
+  let newState;
   switch (action.type) {
     case actionTypes.logUserIn:
       if (action.payload) {
+        window.localStorage.setItem('loggedIn', 'true')
         for (const item in action.payload) {
-          window.localStorage.setItem(item, action.payload[item])
+          if (item === 'username' || item === 'email') {
+            window.localStorage.setItem(item, action.payload[item])
+          }
         }
         console.log('Login data successfully saved!!')
-        return {
+        newState = {
           ...state,
           loggedIn: true,
           user: action.payload
         }
       } else {
-        return {
+        newState = {
           ...state,
           loggedIn: false,
           user: null
         }
       }
+      console.log('new-state: ', newState)
+      return newState;
 
     // eslint-disable-next-line no-fallthrough
     case actionTypes.logUserOut:
+      window.localStorage.clear();
+      window.localStorage.setItem('loggedIn', 'false')
       console.log('User successfully logged out');
-      return {
+      newState = {
         ...state,
         loggedIn: false,
         user: null
       }
+      console.log('new-state: ', newState)
+      return newState;
 
     default:
+      // console.log('state: ', state)
       return state;
   }
 }

@@ -5,7 +5,7 @@ import './Signup.scss'
 import { FiMail, FiLock, FiUser } from 'react-icons/fi';
 import { connect } from 'react-redux';
 import actions from '../../../store/actions/actions'
-import configs from '../../../../configs';
+import Fetch from '../../../../helper/fetch/users';
 function Signup({ dispatch }) {
   const [email, setEmail] = React.useState(''),
     [username, setUsername] = React.useState(''),
@@ -81,18 +81,25 @@ function Signup({ dispatch }) {
   )
 }
 const helpingFunction = {
-  handleSubmit: (e, username, email, password, dispatch) => {
+  handleSubmit: async (e, username, email, password, dispatch) => {
     e.preventDefault();
-
-    fetch(configs.BACKEND_URL + 'register', {
-      method: "POST",
-      body: JSON.stringify({ username, email, password }),
-    }).then(data => data.json().then(data => {
+    const data = await Fetch.fetchRegister(username, email, password);
+    if (data) {
+      console.log('data', data)
       if (data.user) {
-        // console.log(data.user)
         dispatch(actions.logUserIn(data.user))
+        dispatch(actions.showModal({
+          message: 'Welcome, ' + data.user.username,
+          link: '/',
+          buttonText: 'Back To Home'
+        }))
+      } else {
+        dispatch(actions.showModal({
+          message: data.message,
+          buttonText: 'OK'
+        }))
       }
-    }))
+    }
   },
   handleUsernameInputChange: (e, setUsername, setUsernameError) => {
     const localUsername = e.target.value;

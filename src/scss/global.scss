@@ -25,17 +25,24 @@ a:visited {
   }
 
   &.button {
+    cursor: pointer;
     text-decoration: none;
     color: white;
   }
 }
 
-#root>:nth-child(2) {
+.button {
+  cursor: pointer;
+  color: white;
+  background-color: #106dff;
+}
+
+#root>:nth-child(3) {
   padding: 7rem 1.5rem 0;
 }
 
 @media screen and (min-width: 768px) {
-  #root>:nth-child(2) {
+  #root>:nth-child(3) {
     padding: 9rem 2rem 0;
   }
 }

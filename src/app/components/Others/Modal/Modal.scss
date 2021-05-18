@@ -1,0 +1,45 @@
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1001;
+  height: 100vh;
+  background-color: rgba(#000, 0.5);
+  overflow: hidden;
+  transform: scale(0);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &.open {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  main {
+    background-color: whitesmoke;
+    padding: 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+    .message {
+      margin-bottom: 4rem;
+    }
+
+    :nth-child(2) {
+      min-width: 7rem;
+      width: max-content;
+      background-color: #106dff;
+      text-align: center;
+      cursor: pointer;
+    }
+
+  }
+}

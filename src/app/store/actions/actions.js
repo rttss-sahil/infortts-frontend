@@ -8,6 +8,14 @@ const actions = {
   logUserOut: (payload) => ({
     type: actionTypes.logUserOut,
     payload
+  }),
+
+  showModal: (payload) => ({
+    type: actionTypes.showModal,
+    payload
+  }),
+  hideModal: () => ({
+    type: actionTypes.hideModal
   })
 }
 
