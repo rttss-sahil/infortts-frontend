@@ -19,7 +19,7 @@ const fetchRegister = async (username, email, password) => {
     .catch(err => {
       return ({ message: 'error Occurred' })
     })
-  return user
+  return user;
 }
 
 
