@@ -14,7 +14,7 @@
   transform: translateX(100%);
   z-index: 999;
   visibility: 0;
-  padding: 2rem 0 4rem 0;
+  padding: 2rem 0 4rem;
   height: calc(100vh - 5rem);
   display: flex;
   flex-direction: column;
@@ -68,6 +68,16 @@
 
 @media screen and (min-width: 768px) {
   .navbar {
-    top: 7rem
+    top: 7rem;
+    padding: 2rem 2rem 4rem;
+
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .navbar {
+    top: 7rem;
+    padding: 2rem 5rem 4rem;
+
   }
 }

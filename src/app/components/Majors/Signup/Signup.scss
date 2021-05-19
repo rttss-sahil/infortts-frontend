@@ -23,17 +23,21 @@
   .hor__line {
     width: 70vw;
     border: 2px solid gray;
+    background-color: gray;
     border-radius: 999px;
     margin: 2rem 0;
   }
 
   form {
     height: 50vh;
+    width: 25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 
     .input__group {
+      height: 4rem;
       margin: 1rem 0;
       background-color: white;
       border-radius: 5rem;
@@ -64,10 +68,10 @@
       }
 
       input {
-        border-radius: 10px;
         margin: 1rem 0 1rem 1rem;
         width: 20rem;
-        padding: 1rem;
+        padding: 1rem 0.5rem;
+        border-radius: 10px;
         font-size: 1rem;
         border: 2px solid transparent;
         outline: none;
@@ -108,3 +112,8 @@
     font-size: 0.8rem;
   }
 }
+
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1200px) {}

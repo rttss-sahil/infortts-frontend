@@ -16,6 +16,11 @@ function Main() {
     handleScroll = (state) => {
       setScrolled(state)
     };
+  // eslint-disable-next-line no-restricted-globals
+  const browserHeight = screen.height;
+  if (document.querySelector('body .container')) {
+    document.querySelector('body .container').style.height = `${browserHeight - (20 * 4)}px`
+  }
   React.useEffect(() => {
     document.addEventListener('scroll', () => {
       window.scrollY > 20 ? setScrolled(true) : setScrolled(false)

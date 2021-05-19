@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import validate from '../../../../helper/validate'
-import './Login.scss'
+import '../Signup/Signup.scss'
 import { FiMail, FiLock } from 'react-icons/fi';
 import { connect } from 'react-redux';
 import actions from '../../../store/actions/actions';
@@ -15,7 +15,7 @@ function Login({ dispatch }) {
     { HandleSubmit, handleEmailInputChange, handlePasswordInputChange } = helpingFunction;
   return (
     <>
-      <div className="container login">
+      <div className="container register">
         <div className="register__top">
           <p className="top__text">Log In</p>
           <div className="top__link">

@@ -1,5 +1,4 @@
 .container.login {
-  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -23,22 +22,25 @@
 
   .hor__line {
     width: 70vw;
+    max-width: 40rem;
     border: 2px solid gray;
+    background-color: gray;
     border-radius: 999px;
     margin: 2rem 0;
   }
 
   form {
     height: 50vh;
+    width: 25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 
     .input__group {
+      height: 4rem;
       margin: 1rem 0;
       background-color: white;
       border-radius: 5rem;
-      width: 50vw;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -67,7 +69,8 @@
       input {
         margin: 1rem 0 1rem 1rem;
         width: 20rem;
-        padding: 1rem;
+        padding: 1rem 0.5rem;
+        border-radius: 10px;
         font-size: 1rem;
         border: 2px solid transparent;
         outline: none;

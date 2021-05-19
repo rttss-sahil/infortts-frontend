@@ -47,6 +47,12 @@ a:visited {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  #root>:nth-child(3) {
+    padding: 9rem 5rem 0;
+  }
+}
+
 *::before,
 *::after {
   content: '';
