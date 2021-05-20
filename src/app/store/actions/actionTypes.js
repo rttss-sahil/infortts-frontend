@@ -4,6 +4,9 @@ const actionTypes = {
 
   showModal: 'SHOW_MODAL',
   hideModal: 'HIDE_MODAL',
+
+  allowCookies: 'ALLOW_COOKIES',
+  removeCookies: 'REMOVE_COOKIES',
 }
 
 export default actionTypes;

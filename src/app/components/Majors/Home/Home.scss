@@ -1,0 +1,11 @@
+.content {
+  &.first {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 80vh;
+    background-image: url(../../../static/img/home/content-first.jpg);
+    background-size: contain;
+  }
+}

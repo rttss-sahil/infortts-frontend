@@ -16,7 +16,9 @@ function Header({ scrolled, handleScroll }) {
   })
   return (
     <header className={scrolled ? "scrolled" : ""}>
-      <div className="header__line"></div>
+      <div className="header__line">
+        lowercase developers / infortts
+      </div>
       <main>
         <Logo closeNavbar={closeNavbar} />
         <CompanyName scrolled={scrolled} />

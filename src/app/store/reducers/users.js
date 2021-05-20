@@ -37,12 +37,13 @@ const Users = (state = initialState, action) => {
           user: null
         }
       }
-      console.log('new-state: ', newState)
+      console.log('new-USER-state: ', newState)
       return newState;
 
     // eslint-disable-next-line no-fallthrough
     case actionTypes.logUserOut:
-      window.localStorage.clear();
+      window.localStorage.removeItem('username')
+      window.localStorage.removeItem('email')
       window.localStorage.setItem('loggedIn', 'false')
       console.log('User successfully logged out');
       newState = {
@@ -50,12 +51,13 @@ const Users = (state = initialState, action) => {
         loggedIn: false,
         user: null
       }
-      console.log('new-state: ', newState)
+      console.log('new-USER-state: ', newState)
       return newState;
 
     default:
-      // console.log('state: ', state)
-      return state;
+      newState = state;
+      console.log('USER-state: ', newState)
+      return newState;
   }
 }
 

@@ -16,6 +16,14 @@ const actions = {
   }),
   hideModal: () => ({
     type: actionTypes.hideModal
+  }),
+
+  allowCookies: (payload) => ({
+    type: actionTypes.allowCookies,
+    payload
+  }),
+  removeCookies: () => ({
+    type: actionTypes.removeCookies
   })
 }
 
