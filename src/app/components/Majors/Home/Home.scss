@@ -23,7 +23,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     padding-left: 4rem;
-    margin-bottom: 3rem;
 
     h1 {
       &:nth-child(1) {
@@ -38,6 +37,50 @@
   }
 
   &.second {
+    background-color: #003399;
+    margin: 0 -2rem;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+
+    * {
+      color: white;
+      text-align: center;
+    }
+
+    &>* {
+      padding: 4rem 1rem;
+      border: 1px solid white;
+    }
+
+
+    .left {
+      h1 {
+        font-size: 3rem;
+        line-height: 5rem;
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        font-family: brandon;
+      }
+
+      a {
+        padding-top: 2rem;
+        display: flex;
+        align-items: center;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &.third {
     display: grid;
     justify-content: center;
     text-align: center;
@@ -93,11 +136,14 @@
 @media screen and (min-width: 768px) {
   .content {
     &.first {
-      margin-bottom: 5rem;
 
       p {
         width: 30vw;
       }
+    }
+
+    &.second {
+      margin: 4rem -2rem;
     }
   }
 }
@@ -107,11 +153,15 @@
   .content {
     &.first {
       margin: 0 -5rem;
-      margin-bottom: 7rem;
 
       p {
         width: 30vw;
       }
+    }
+
+    &.second {
+      padding: 4rem 3rem;
+      margin: 7rem -5rem;
     }
   }
 }

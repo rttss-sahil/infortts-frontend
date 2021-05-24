@@ -27,7 +27,7 @@ function Navbar({ redux, dispatch, navbarOpen, closeNavbar }) {
           <span>{now + ", "}</span>
           <span>{redux.user.loggedIn ? redux.user.user.username : "Guest"}</span>
         </div>
-        <NavLink className="navbar__group__second__item" to="/starthere" onClick={() => closeNavbar()}>
+        <NavLink className="navbar__group__second__item" to="/start-here" onClick={() => closeNavbar()}>
           <span>Get Started</span>
           <BsArrowRight />
         </NavLink>

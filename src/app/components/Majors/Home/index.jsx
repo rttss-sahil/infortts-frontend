@@ -22,6 +22,19 @@ const Home = () => {
         <Button text='Get Started' link='/get-started' />
       </div>
       <div className="content second">
+        <div className="left">
+          <h1>The Freedom to Create</h1>
+          <h1>the Website You Want</h1>
+        </div>
+        <div className="right">
+          <p>Design and build your own high-quality websites. Whether you’re promoting your business, showcasing your work, opening your store or starting a blog—you can do it all with the Wix website builder.</p>
+          <Link path="start-here">
+            <span>Get Started</span>{' '}
+            <BsArrowRight />
+          </Link>
+        </div>
+      </div>
+      <div className="content third">
         <h1>Professionally Designed</h1>
         <h1>Website Templates</h1>
         <p>Choose from 500+ customizable website templates that are built to meet your business needs.</p>
