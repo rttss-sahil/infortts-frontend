@@ -109,7 +109,7 @@
       justify-content: center;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 1rem;
-      padding: 4rem 0;
+      padding: 6rem 0;
 
       .item {
         display: flex;
@@ -193,6 +193,119 @@
     }
 
   }
+
+  &.fifth {
+    background-color: rgb(255, 236, 212);
+    margin: 0 -2rem;
+    padding: 4rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      margin-top: 5rem;
+
+      h1 {
+        margin: 1rem;
+      }
+    }
+
+    .right {
+      p {
+        margin-top: 2rem;
+        font-family: brandon;
+        color: black;
+        font-size: 1.25rem;
+      }
+    }
+
+    a {
+      padding: 4rem 0;
+      color: black;
+      display: flex;
+      align-items: center;
+      font-family: brandon-bold;
+      text-decoration: underline;
+    }
+  }
+
+  &.sixth {
+    display: flex;
+    flex-direction: column;
+
+    * {
+      color: black;
+      font-family: brandon;
+    }
+
+    h1 {
+      font-family: brandon-bold;
+      padding: 4rem 0;
+    }
+
+    .faq {
+      padding: 2rem 0;
+      border-top: 1px solid black;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      .question {
+        font-size: 1.35rem;
+
+        span {
+          &:nth-child(1) {
+            padding-right: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  &.seventh {
+    background-color: rgb(146, 146, 146);
+    margin: 0 -2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 7rem 2rem;
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      color: black;
+
+      h3 {
+        color: rgb(75, 75, 75);
+        margin-bottom: 2rem;
+      }
+
+      a {
+        color: black;
+        width: fit-content;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+
+        img {
+          margin-right: 1rem;
+          border-radius: 50%;
+          width: 2rem;
+        }
+      }
+
+      p {
+        font-family: brandon;
+        margin: 1rem 0;
+        font-size: 1rem;
+      }
+    }
+  }
 }
 
 
@@ -206,12 +319,22 @@
     }
 
     &.second {
-      margin: 4rem -2rem;
+      margin: 4rem -2rem 8rem -2rem;
     }
 
     &.fourth {
-      margin: 4rem -2rem;
+      margin: 10rem -2rem 8rem -2rem;
     }
+
+    &.fifth {
+      margin: 10rem -2rem 8rem -2rem;
+    }
+
+    &.sixth {
+      margin: 10rem 0 8rem;
+    }
+
+
   }
 }
 
@@ -233,6 +356,19 @@
 
     &.fourth {
       padding: 4rem 0rem;
+      margin: 7rem -5rem;
+    }
+
+    &.fifth {
+      margin: 7rem -5rem;
+    }
+
+    &.sixth {
+      margin: 7rem 0;
+    }
+
+    &.seventh {
+      padding: 7rem 5rem;
       margin: 7rem -5rem;
     }
   }
