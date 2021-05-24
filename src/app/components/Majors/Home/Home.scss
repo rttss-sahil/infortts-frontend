@@ -23,6 +23,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     padding-left: 4rem;
+    margin-bottom: 3rem;
 
     h1 {
       &:nth-child(1) {
@@ -83,6 +84,33 @@
           margin-top: -1rem;
           color: black;
         }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .content {
+    &.first {
+      margin-bottom: 5rem;
+
+      p {
+        width: 30vw;
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .content {
+    &.first {
+      margin: 0 -5rem;
+      margin-bottom: 7rem;
+
+      p {
+        width: 30vw;
       }
     }
   }
