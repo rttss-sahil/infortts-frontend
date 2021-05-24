@@ -45,7 +45,7 @@ function Navbar({ redux, dispatch, navbarOpen, closeNavbar }) {
         </NavLink>
       </div>
       <div className="navbar__group templates">
-        <NavLink to="/templates" onClick={() => closeNavbar()}>
+        <NavLink to="/website-template" onClick={() => closeNavbar()}>
           <HiTemplate />
           <span>Templates</span>
         </NavLink>

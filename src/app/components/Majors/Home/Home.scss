@@ -1,4 +1,15 @@
 .content {
+  width: 100vw;
+
+  p {
+    font-family: brandon-thin;
+  }
+
+  h1 {
+    color: black;
+    line-height: 3rem;
+  }
+
   &.first {
     display: flex;
     flex-direction: column;
@@ -7,5 +18,42 @@
     height: 80vh;
     background-image: url(../../../static/img/home/content-first.jpg);
     background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 1rem;
+
+    h1 {
+      &:nth-child(1) {
+        margin-left: -0.5rem;
+      }
+    }
+
+    p {
+      padding: 1rem 0;
+      width: 50vw;
+    }
+  }
+
+  &.second {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+
+    p {
+      width: 50vw;
+      margin: 0 auto;
+    }
+
+    a {
+      text-decoration: underline;
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: brandon-bold;
+
+      span {
+        padding-right: 5px;
+      }
+    }
   }
 }
