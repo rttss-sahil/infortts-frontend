@@ -8,7 +8,9 @@ import templateDesign from '../../../static/img/home/template/template-design.pn
 import templateEducation from '../../../static/img/home/template/template-education.png'
 import templatePhotography from '../../../static/img/home/template/template-photography.png';
 import templateStore from '../../../static/img/home/template/template-store.png'
+import contentFourth from "../../../static/img/home/content-fourth.png";
 const Button = React.lazy(() => import('../../Others/Button'))
+
 // const templateBlog = React.laz(() => import('../../../static/img/home/template/template-blog.png'))
 const Home = () => {
   return (
@@ -69,25 +71,43 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
-      <h1>dkshbsjdkhfhjdsfj</h1>
+      <div className="content fourth">
+        <div className="left">
+          <div className="up">
+            <h1>Build Your Unique</h1>
+            <h1>Online Presence</h1>
+            <p>To create your own website, follow these steps:</p>
+          </div>
+          <div className="down">
+            <div className="steps">
+              <p>Choose a plan</p>
+              <p>Pick a template and customize anything, or answer a few questions and get a free website designed just for you.</p>
+            </div>
+            <div className="steps">
+              <p>Add advanced features</p>
+              <p>Start your own blog, add an online store and accept bookings online. You can always add more features as you grow.</p>
+            </div>
+            <div className="steps">
+              <p>Edit your mobile view</p>
+              <p>Check out the mobile-optimized version of your site. Switch to the Mobile Editor to personalize it even more.</p>
+            </div>
+            <div className="steps">
+              <p>Optimize for search engine</p>
+              <p>Get a robust suite of SEO tools to help you grow your organic traffic and maximize how your site performs on search.</p>
+            </div>
+          </div>
+          <Link path="/start-here">
+            <span>Start Now</span>{' '}
+            <BsArrowRight />
+          </Link>
+        </div>
+        <div className="right">
+          <img src={contentFourth} alt="" />
+        </div>
+      </div>
+      <div className="content fifth"></div>
+      <div className="content sixth"></div>
+      <div className="content seventh"></div>
     </div>
   )
 }

@@ -50,7 +50,7 @@
 
     &>* {
       padding: 4rem 1rem;
-      border: 1px solid white;
+      border: 1px solid rgba(white, 0.5);
     }
 
 
@@ -84,6 +84,7 @@
     display: grid;
     justify-content: center;
     text-align: center;
+    padding-top: 2rem;
 
     p {
       width: 50vw;
@@ -130,6 +131,68 @@
       }
     }
   }
+
+  &.fourth {
+    margin: 0 -2rem;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+
+    * {
+      color: white;
+      font-family: brandon;
+    }
+
+    .left {
+      background-color: #0E3333;
+
+      .up {
+        padding: 2rem 1rem 1rem;
+      }
+
+      .down {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 3rem 0;
+
+        .steps {
+          display: flex;
+          flex-direction: column;
+          border-top: 1px solid rgba(white, 0.5);
+          padding-top: 1rem;
+          margin: 10px;
+
+          p {
+            &:nth-child(2) {
+              font-family: brandon-thin;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+
+      a {
+        padding: 1rem 1rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: underline;
+      }
+    }
+
+    .right {
+      background-color: whitesmoke;
+      display: grid;
+      align-items: center;
+
+      img {
+        padding-top: 3rem;
+        width: 50vw;
+      }
+    }
+
+  }
 }
 
 
@@ -143,6 +206,10 @@
     }
 
     &.second {
+      margin: 4rem -2rem;
+    }
+
+    &.fourth {
       margin: 4rem -2rem;
     }
   }
@@ -161,6 +228,11 @@
 
     &.second {
       padding: 4rem 3rem;
+      margin: 7rem -5rem;
+    }
+
+    &.fourth {
+      padding: 4rem 0rem;
       margin: 7rem -5rem;
     }
   }
